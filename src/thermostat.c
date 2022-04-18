@@ -133,7 +133,7 @@ static void
 boiler_control(int temp)
 {
 
-	if (temp < 2500) {
+	if (temp < 2400) {
 		mdx_gpio_set(&dev_gpiohs, PIN_RELAY, 1);
 		mdx_gpio_set(&dev_gpio, PIN_GPIO_LED1, 0);
 	} else {
