@@ -232,11 +232,11 @@ board_init(void)
 	k210_gpiohs_init(&dev_gpiohs, BASE_GPIOHS);
 	k210_gpio_init(&dev_gpio, BASE_GPIO);
 
-	/* Enable LEDs. */
+	/* Disable LED. */
 	mdx_gpio_configure(&dev_gpio, PIN_GPIO_LED0, MDX_GPIO_OUTPUT);
 	mdx_gpio_configure(&dev_gpio, PIN_GPIO_LED1, MDX_GPIO_OUTPUT);
-	mdx_gpio_set(&dev_gpio, PIN_GPIO_LED0, 0);
-	mdx_gpio_set(&dev_gpio, PIN_GPIO_LED1, 0);
+	mdx_gpio_set(&dev_gpio, PIN_GPIO_LED0, 1);
+	mdx_gpio_set(&dev_gpio, PIN_GPIO_LED1, 1);
 
 	k210_uarths_init(&uarths_sc, BASE_UARTHS, CPU_FREQ, DEFAULT_BAUDRATE);
 	mdx_console_register(uart_putchar, (void *)&uarths_sc);
